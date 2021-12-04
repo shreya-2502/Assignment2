@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include<string.h>
+#include <stdlib.h>
 
 typedef struct cricket
 {
@@ -12,32 +13,33 @@ int main()
     cricket s[10];
     int i, n, op, cntr, index;
     char cntry[15], nm[15];
-    printf("\nEnter number of players ");
+
+    printf("\nEnter number of players: ");
     scanf("%d",&n);
-   printf("\n Enter data of %d players\n",n);
+
+    printf("\n Enter data of %d players\n",n);
     for(i=0;i<n;i++)
     {
-        printf("\n Enter name of the player ");
+        printf("\n Enter name of the player: ");
         scanf("%s", s[i].name);
-        printf("\n Enter age of the player ");
+        printf("\n Enter age of the player: ");
         scanf("%d", &s[i].age);
-        printf("\n Enter country of the player ");
+        printf("\n Enter country of the player :");
         scanf("%s", s[i].country);
-        printf("\n Enter category of the player ");
+        printf("\n Enter category of the player:");
         scanf("%s", s[i].category);
-        printf("\n Enter Number of ODIs played ");
+        printf("\n Enter Number of ODIs played:");
         scanf("%d", &s[i].odi);
-        printf("\n Enter Number of International 20-20s played ");
+        printf("\n Enter Number of International 20-20s played:");
         scanf("%d", &s[i].twenty);
-        printf("\n Enter Average batting score ");
+        printf("\n Enter Average batting score:");
         scanf("%d", &s[i].batscore);
-        printf("\n Enter Total number of wickets taken ");
+        printf("\n Enter Total number of wickets taken:");
         scanf("%d", &s[i].wkts);
     }
-
     do
     {
-        printf("\nChoose any task: \n1) Number of batsman of a particular country \n");
+        printf("\n\nPerform following queries \n1) Number of batsman of a particular country \n");
         printf("2) Batsman with highest average score \n");
         printf("3) Number of bowlers of a particular country \n");
         printf("4) Bowler that has taken maximum no of wickets \n");
@@ -106,13 +108,11 @@ int main()
                         if(strcmp(nm,s[i].name)==0)
                         {
                             printf("name \tcountry \tcategory \tage \todi \t20-20s \tbatscore \twkts\n");
-                            printf("%s \t%s \t%s \t%d ",s[i].name, s[i].country, s[i].category, s[i].age);
-                            printf("\t%d \t%d \t%d \t%d\n",s[i].odi, s[i].twenty ,s[i].batscore, s[i].wkts);
+                            printf("%s\t %s\t %s\t\t %d",s[i].name, s[i].country, s[i].category, s[i].age);
+                            printf("\t\t%d \t\t%d \t\t%d \t\t%d\n",s[i].odi, s[i].twenty ,s[i].batscore, s[i].wkts);
                         }
                     }
                     break;
-            default:
-            printf("Invalid input try again\n");
         }
     }while(op!=6);
     return 0;
